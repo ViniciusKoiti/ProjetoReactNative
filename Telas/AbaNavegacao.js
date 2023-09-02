@@ -1,0 +1,62 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import TelaForm from './TelaForm';
+import TelaLista from './TelaLista';
+
+const { Navigator, Screen } = createBottomTabNavigator();
+
+function AbaNavegacao(){
+    return (
+        <NavigationContainer>
+            <Navigator
+                screenOptions={
+                    {
+                        tabBarActiveTintColor: '#32264dc',
+                        tabBarInactiveTintColor: '#c1bccc',
+                        tabBarActiveBackgroundColor:'#ebebf5',
+                        tabBarInactiveBackgroundColor: '#fafafc',
+                        tabBarLabelStyle: {
+                            fontSize: 15,
+                            position: 'absolute',
+                            top:15,
+                            bottom:0,
+                            left:0,
+                            right:0
+                        },
+                        tabBarIconStyle: {display: 'none'}
+                    }
+                }
+               
+                
+            >
+                <Screen
+                    name='Lista'
+                    component={TelaLista}
+                    options={
+                        {
+                            tabBarLabel: 'Tarefas'
+                        }
+                    }
+                >
+
+                </Screen>
+                <Screen
+                    name='Form'
+                    component={TelaForm}
+                    options={
+                        {
+                            tabBarLabel:'Cadastrar'
+                        }
+                    }
+                >
+
+                </Screen>
+
+            </Navigator>
+        </NavigationContainer>
+    );
+}
+
+export default AbaNavegacao;

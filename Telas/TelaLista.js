@@ -15,7 +15,7 @@ export default function TelaLista() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'blue',
+        backgroundColor: 'green',
         alignItems: 'center',
         justifyContent: 'center',
     }
